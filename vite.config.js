@@ -1,11 +1,13 @@
-   import { defineConfig } from "vite";
+import {defineConfig} from "vite";
 
-export default defineConfig ({
+export default defineConfig({
+    base :"./",
     build : {
         rollupOptions : {
             input : {
-                main :"/app.js",
-                server : "/server.js"
+                main: "./index.html",
+                app: "./app.js",
+                server: "./server.js"
             }
         }
     }
