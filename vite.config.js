@@ -5,8 +5,7 @@ export default defineConfig ({
         rollupOptions : {
             input : {
                 main :"/app.js",
-                server : "/server.js",
-
+                server : "/server.js"
             }
         }
     }
