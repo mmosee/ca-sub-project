@@ -1,7 +1,7 @@
 {
   "workflowApiVersion": "1.1",
   "metaData": {
-    "icon": "images/test.png",
+    "icon": "icon.png",
     "category": "customer"
   },
   "type": "REST",
@@ -26,21 +26,21 @@
           "foundSignupDate": ""
         }
       ],
-      "url": "https://sf-ex-ca2.onrender.com/execute"
+      "url": "https://ca-sub-project.onrender.com/execute"
     }
   },
   "configurationArguments": {
     "save": {
-      "url": "https://sf-ex-ca2.onrender.com/save"
+      "url": "https://ca-sub-project.onrender.com/save"
     },
     "publish": {
-      "url": "https://sf-ex-ca2.onrender.com/publish"
+      "url": "https://ca-sub-project.onrender.com/publish"
     },
     "validate": {
-      "url": "https://sf-ex-ca2.onrender.com/validate"
+      "url": "https://ca-sub-project.onrender.com/validate"
     },
     "stop": {
-      "url": "https://sf-ex-ca2.onrender.com/stop"
+      "url": "https://ca-sub-project.onrender.com/stop"
     }
   },
   "wizardSteps": [

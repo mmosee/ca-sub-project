@@ -17,7 +17,7 @@
             <h1 class="title">카카오톡 메시지 서비스 <span class="sub-title">v0.1</spaa></h1>
         </div>`,Yr=()=>`<div class="content">
             <div class="control-wrap">
-                <button type="button" class="btn bg-primary btn-round">PUBLISH</button>
+                <button type="button" class="btn bg-primary btn-round" onclick={{ console.log("ssdsd")}}>PUBLISH</button>
                 <button type="button" class="btn bg-primary btn-round">SAVE</button>
                 <button type="button" class="btn bg-success btn-round">VALIDATE</button>
                 <button type="button" class="btn bg-info btn-round">STOP</button>
@@ -79,7 +79,7 @@
                                     <option value="3">3</option>
                                     <option value="4">4</option>
                                 </select>
-                                <button type="button" onClick={{ phoneInputClickEvent }}>적용</button>
+                                <button type="button" onClick={{ phoneInputClickEvent }}>안적용</button>
                             </fieldset>    
                         </div>
                         
