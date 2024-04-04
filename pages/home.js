@@ -67,7 +67,7 @@ const home = () => {
                                     <option value="3">3</option>
                                     <option value="4">4</option>
                                 </select>
-                                <button type="button" onClick={{ phoneInputClickEvent }}>적용</button>
+                                <button type="button" onClick={{ phoneInputClickEvent }}>안적용</button>
                             </fieldset>    
                         </div>
                         
