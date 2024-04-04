@@ -1,16 +1,15 @@
 import express from "express"
 import path from 'path'
 const app = express();
+const configJson = await import('./config.json', { assert: { type: 'json' } });
 
-import configJson from "/config.json"
+app.use(express.static("./"));
 
-app.use(express.static(__dirname));
-
-app.get('/', function(req, res){
-    res.sendFile(__dirname + "/index.html")
+app.get('*', function(req, res){
+    res.sendFile(path.resolve("./", "index.html"))
 });
-
-//
+app.listen(9000, () => {
+})
 app.post('/save', function(req, res) {
     console.log('debug: /save');
     return res.status(200).json({});
@@ -35,8 +34,3 @@ app.post('/execute', function(req, res) {
     console.log('debug: /execute');
     return res.status(200).json({});
 });
-
-//
-app.listen(3000, () => {
-    console.log("hi");
-})

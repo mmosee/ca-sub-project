@@ -7,6 +7,7 @@ import Header from './template/header.js'
 import Home from './pages/home.js'
 import Footer from './template/footer.js'
 
+
 document.addEventListener('DOMContentLoaded', function() {
     // Apply the styles to the app container
     const app = document.querySelector('#app');
@@ -27,5 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
     app.appendChild(footer)
 
     customActivity();
-    jquery();
 });
+
+console.log(jquery)
