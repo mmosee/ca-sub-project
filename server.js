@@ -1,7 +1,8 @@
 import express from "express"
 import path from 'path'
-
 const app = express();
+
+import configJson from "/config.json"
 
 app.use(express.static(__dirname));
 

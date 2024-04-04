@@ -1,7 +1,7 @@
 import './assets/css/style.css';
+import 'vite/modulepreload-polyfill'
 import jquery from "jquery";
 import customActivity from "./assets/js/customactivity.js";
-import configJson from "/config.json"
 
 import Header from './template/header.js'
 import Home from './pages/home.js'
