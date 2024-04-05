@@ -7,8 +7,8 @@
   "type": "REST",
   "lang": {
     "en-US": {
-      "name": "CA-TEST",
-      "description": "ca test"
+      "name": "Kakao Talk",
+      "description": "Kakao Talk send event"
     }
   },
   "arguments": {
