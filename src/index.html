@@ -5,6 +5,7 @@
     <title>Jounery Builder Custom Activity Kakao v0.1</title>
     <!-- Style -->
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/vendor/swiper.min.css">
     <!-- vendor -->
     <script type="text/javascript" src="assets/js/vendor/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/vendor/require.min.js"></script>
@@ -34,10 +35,17 @@
 
         .fd-col {flex-direction: column}
 
-        .toggle-wrap {font-size:0;}
-        .toggle-wrap .label {font-size:13px;line-height:19px;}
+        .toggle-btn {font-size:13px;line-height:19px;}
+        button.toggle-btn {border:0;background:transparent}
 
-        .btn-list button {width:100%;height:80px;font-size:30px;}
+        .toggle-panel {display:none;}
+        .toggle-panel.is-show {display:block}
+
+
+
+        .wide {width:100%;}
+        .center-margin {display:block;margin: 0 auto;}
+
     </style>
 
 </head>
@@ -49,14 +57,34 @@
                     <h2>1. 메세지 전송 타입 설정</h2>
                 </div>
                 <div class="cont-wrap center-box">
-                    <ul class="btn-list">
+                    <ul class="radio-list">
                         <li>
-                            <button type="button" data-tooltip="test1" class="">알림톡</button>
-                            <div data-toggle="step1Btn1" class="toggle-wrap"><button type="button">자세히 보기</button><p>고객에게 필요한 정보나 알림을 보낼 수 있는 카카오톡의 서비스입니다. 예약 확인, 배송 알림, 결제 내역 같은 다양한 형태의 메시지를 실시간으로 전송할 수 있습니다.</p></div>
+                            <button data-popup-open="noticeTalkPopup" class="outer-btn"> 예시</button>
+                            <div>
+                                <span class="radio wide center-margin">
+                                    <input type="radio" id="noticeMsg" value="noticeMsg" name="step1Choose">
+                                    <label for="noticeMsg">알림톡 - 정보성 메세지</label>
+                                </span>
+                            </div>
+                            <!--<div>
+                                <button type="button" data-toggle="step1Btn1" class="toggle-btn">자세히 보기</button>
+                                <p data-toggle-panel="step1Btn1" class="toggle-panel">고객에게 필요한 정보나 알림을 보낼 수 있는 카카오톡의 서비스입니다. 예약 확인, 배송 알림, 결제 내역 같은 다양한 형태의 메시지를 실시간으로 전송할 수 있습니다.</p>
+                            </div>-->
                         </li>
                         <li>
-                            <button type="button" data-tooltip="test2">친구톡</button>
-                            <div data-toggle="step1Btn2" class="toggle-wrap"><button type="button">자세히 보기</button><p> 카카오톡 친구로 등록된 고객에게 1:1 대화 형태로 메시지를 보낼 수 있는 서비스입니다. 이 서비스는 개인화된 메시지나 마케팅 콘텐츠를 직접적으로 고객과 소통하고자 할 때 유용합니다. 친구톡을 통해 보낼 수 있는 메시지에는 텍스트, 이미지, 링크 등이 포함될 수 있어, 다양한 형태의 커뮤니케이션이 가능합니다</p></div>
+                            <button data-popup-open="friendTalkPopup" class="outer-btn">예시</button>
+                            <div>
+                                <span class="radio wide center-margin">
+                                    <input type="radio" id="friendMsg" value="friendMsg" name="step1Choose">
+                                    <label for="friendMsg">친구톡 - 광고성 메세지</label>
+                                </span>
+                            </div>
+                            <!--<div>
+                                <button type="button" data-toggle="step1Btn2" class="toggle-btn">자세히 보기</button>
+                                <p data-toggle-panel="step1Btn2" class="toggle-panel"> 카카오톡 친구로 등록된 고객에게 1:1 대화 형태로 메시지를
+                                    보낼 수 있는 서비스입니다. 이 서비스는 개인화된 메시지나 마케팅 콘텐츠를 직접적으로 고객과 소통하고자 할 때 유용합니다. 친구톡을 통해 보낼 수 있는
+                                    메시지에는 텍스트, 이미지, 링크 등이 포함될 수 있어, 다양한 형태의 커뮤니케이션이 가능합니다</p>
+                            </div>-->
                         </li>
                     </ul>
                 </div>
@@ -133,6 +161,81 @@
             <div id="message"></div>
         </div>
     </div>
-    <script src="assets/js/ui-pub.js"></script>
+
+    <!-- 알림톡 팝업 -->
+    <div class="popup-wrap is-dimmed" data-popup="noticeTalkPopup" title="클릭하면 닫힙니다.">
+        <div class="flex-wrap">
+            <div class="popup">
+                <div class="popup-body">
+                    <div class="inner">
+
+                        <div class="swiper" data-swiper="noticeTalkSwiper">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <div class="swiper-slide"><img src="assets/images/swiper/visual/noticeswiper-img-01.png" alt="알림톡 예시 이미지"></div>
+                                <div class="swiper-slide"><img src="assets/images/swiper/visual/noticeswiper-img-02.png" alt="알림톡 예시 이미지"></div>
+                                <div class="swiper-slide"><img src="assets/images/swiper/visual/noticeswiper-img-03.png" alt="알림톡 예시 이미지"></div>
+                                <div class="swiper-slide"><img src="assets/images/swiper/visual/noticeswiper-img-04.png" alt="알림톡 예시 이미지"></div>
+                            </div>
+                        </div>
+
+                        <div class="swiper swiper-thumbs" data-swiper="noticeTalkSwiperThumb">
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <div class="swiper-slide" style="background-image:url('assets/images/swiper/visual/noticeswiper-img-01.png')"></div>
+                                <div class="swiper-slide" style="background-image:url('assets/images/swiper/visual/noticeswiper-img-02.png')"></div>
+                                <div class="swiper-slide" style="background-image:url('assets/images/swiper/visual/noticeswiper-img-03.png')"></div>
+                                <div class="swiper-slide" style="background-image:url('assets/images/swiper/visual/noticeswiper-img-04.png')"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup-foot">
+                    <div class="inner">
+                        <button type="button" class="btn bg-info size-wide" data-popup-close="noticeTalkPopup">CLOSE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 친구톡 팝업 -->
+    <div class="popup-wrap is-dimmed" data-popup="friendTalkPopup" title="클릭하면 닫힙니다.">
+        <div class="flex-wrap">
+            <div class="popup">
+                <div class="popup-body">
+                    <div class="inner">
+                        <video src="assets/video/friendTalk_video.mp4" autoplay="autoplay" muted="muted" loop="loop" playsinline="" class="video_cont"></video>
+                    </div>
+                </div>
+                <div class="popup-foot">
+                    <div class="inner">
+                        <button type="button" class="btn bg-info size-wide" data-popup-close="friendTalkPopup">CLOSE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="assets/js/vendor/swiper.min.js"></script>
+    <!-- 공통 UI -->
+    <script type="text/javascript" src="assets/js/ui-pub.js"></script>
+    <!-- 개별 UI -->
+    <script type="text/javascript">
+        const ntSwiperThumb = new Swiper('[data-swiper="noticeTalkSwiperThumb"]', {
+            slidesPerView: 4,
+            freeMode: true,
+            watchSlidesVisibility: true,
+            watchSlidesProgress: true,
+            slideToClickedSlide: true
+        })
+        const ntSwiper = new Swiper('[data-swiper="noticeTalkSwiper"]', {
+            thumbs: {
+                swiper: ntSwiperThumb
+            }
+        })
+    </script>
 </body>
 </html>
