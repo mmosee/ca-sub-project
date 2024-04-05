@@ -20,90 +20,119 @@
             require(config, dependencies);
         })();
     </script>
+
+    <style>
+        html,body {height:100%;}
+        .wrap {position:relative;height:100%;}
+        .center-box {display:flex;align-items: center;justify-content: center;width:100%;max-width:600px;margin:0 auto;}
+        .step {display: none;height:100%;}
+        .step .inner {height:100%;}
+        #step1 {display: block;}
+
+        .tit-wrap {padding:10px;border-bottom:1px dotted #ddd;}
+        .cont-wrap {padding:10px;height:calc(100% - 41px)}
+
+        .fd-col {flex-direction: column}
+
+        .toggle-wrap {font-size:0;}
+        .toggle-wrap .label {font-size:13px;line-height:19px;}
+
+        .btn-list button {width:100%;height:80px;font-size:30px;}
+    </style>
+
 </head>
 <body>
-<div id="step1" class="step">
-    Select your SMS message:
-    <select id="select1">
-        <option value="">메세지 타입을 설정하세요.</option>
-        <option value="알림톡">알림톡</option>
-        <option value="친구톡">친구톡</option>
-    </select>
-
-    <button id="toggleLastStep">Toggle Last Step</button>
-</div>
-<div id="step2" class="step">
-    <div class="msg-wrap">
-        <div class="msg-wrap-inner flex-wrap ai-st ju-sb">
-            <div class="column">
-                <div class="title-wrap">
-                    <h2 class="title">메세지 확인</h2>
+    <div class="wrap">
+        <div id="step1" class="step">
+            <div class="inner">
+                <div class="tit-wrap">
+                    <h2>1. 메세지 전송 타입 설정</h2>
                 </div>
-                <!-- PHONE WRAP : START -->
-                <div class="phone-wrap">
-                    <div class="phone">
-                        <div class="data-info">
-                            <span id="getMessageType" ></span>
-                        </div>
-                        <div class="outer-btns">
-                            <span class="left-btn-01"></span>
-                            <span class="left-btn-02"></span>
-                            <span class="left-btn-03"></span>
-                            <span class="right-btn"></span>
-                        </div>
-                        <div class="phone-head">
-                            <div class="status-bar">
-                                <i class="icon icon-wifi"></i>
-                                <i class="icon icon-bluetooth"></i>
-                                <i class="icon icon-lte"></i>
-                                <i class="icon icon-lte-signal"></i>
-                                <i class="icon icon-battery"></i>
-                                <span class="camera"></span>
-                            </div>
-                        </div>
-                        <div class="phone-body">
-                            <div class="chat-wrap">
-                                <div class="chat" >
-                                    <div class="msg">
-                                        <p data-view-content id="message2"></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="phone-foot"></div>
-                    </div>
+                <div class="cont-wrap center-box">
+                    <ul class="btn-list">
+                        <li>
+                            <button type="button" data-tooltip="test1" class="">알림톡</button>
+                            <div data-toggle="step1Btn1" class="toggle-wrap"><button type="button">자세히 보기</button><p>고객에게 필요한 정보나 알림을 보낼 수 있는 카카오톡의 서비스입니다. 예약 확인, 배송 알림, 결제 내역 같은 다양한 형태의 메시지를 실시간으로 전송할 수 있습니다.</p></div>
+                        </li>
+                        <li>
+                            <button type="button" data-tooltip="test2">친구톡</button>
+                            <div data-toggle="step1Btn2" class="toggle-wrap"><button type="button">자세히 보기</button><p> 카카오톡 친구로 등록된 고객에게 1:1 대화 형태로 메시지를 보낼 수 있는 서비스입니다. 이 서비스는 개인화된 메시지나 마케팅 콘텐츠를 직접적으로 고객과 소통하고자 할 때 유용합니다. 친구톡을 통해 보낼 수 있는 메시지에는 텍스트, 이미지, 링크 등이 포함될 수 있어, 다양한 형태의 커뮤니케이션이 가능합니다</p></div>
+                        </li>
+                    </ul>
                 </div>
-                <!-- //PHONE WRAP : END -->
-            </div>
-            <div class="column">
-                <div class="title-wrap">
-                    <h2 class="title">메세지 선택</h2>
-                </div>
-                <div class="box">
-                    <fieldset class="selet-field">
-                        <label for="select2"></label>
-                        <select id="select2" data-select="talk-select" >
-                            <option value="">선택</option>
-                            <option value="안녕하세요! 오늘은 날씨가 좋네요. 산책하기 딱 좋은 날씨에요">안녕하세요! 오늘은 날씨가 좋네요. 산책하기 딱 좋은 날씨에요</option>
-                            <option value="요즘 새로운 취미를 찾고 있는데, 어떤 걸 시작해볼까 고민 중이에요. 추천 있으세요">요즘 새로운 취미를 찾고 있는데, 어떤 걸 시작해볼까 고민 중이에요. 추천 있으세요</option>
-                            <option value="요즘 넷플릭스에서 어떤 드라마나 영화를 보시나요? 추천 좀 해주세요">요즘 넷플릭스에서 어떤 드라마나 영화를 보시나요? 추천 좀 해주세요</option>
-                            <option value="오랜만에 가족과 함께 저녁을 먹었는데, 정말 행복한 시간이었어요. 가족과 함께 있는 순간이 최고죠">오랜만에 가족과 함께 저녁을 먹었는데, 정말 행복한 시간이었어요. 가족과 함께 있는 순간이 최고죠</option>
-                        </select>
-                        <button type="button">안적용</button>
-                    </fieldset>
-                </div>
-
             </div>
         </div>
+        <div id="step2" class="step">
+            <div class="msg-wrap">
+                <div class="msg-wrap-inner flex-wrap ai-st ju-sb">
+                    <div class="column">
+                        <div class="title-wrap">
+                            <h2 class="title">메세지 확인</h2>
+                        </div>
+                        <!-- PHONE WRAP : START -->
+                        <div class="phone-wrap">
+                            <div class="phone">
+                                <div class="data-info">
+                                    <span id="getMessageType" ></span>
+                                </div>
+                                <div class="outer-btns">
+                                    <span class="left-btn-01"></span>
+                                    <span class="left-btn-02"></span>
+                                    <span class="left-btn-03"></span>
+                                    <span class="right-btn"></span>
+                                </div>
+                                <div class="phone-head">
+                                    <div class="status-bar">
+                                        <i class="icon icon-wifi"></i>
+                                        <i class="icon icon-bluetooth"></i>
+                                        <i class="icon icon-lte"></i>
+                                        <i class="icon icon-lte-signal"></i>
+                                        <i class="icon icon-battery"></i>
+                                        <span class="camera"></span>
+                                    </div>
+                                </div>
+                                <div class="phone-body">
+                                    <div class="chat-wrap">
+                                        <div class="chat" >
+                                            <div class="msg">
+                                                <p data-view-content id="message2"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="phone-foot"></div>
+                            </div>
+                        </div>
+                        <!-- //PHONE WRAP : END -->
+                    </div>
+                    <div class="column">
+
+                        <div class="title-wrap">
+                            <h2 class="title">메세지 선택</h2>
+                        </div>
+
+                        <div class="box">
+                            <fieldset class="selet-field">
+                                <label for="select2"></label>
+                                <select id="select2" data-select="talk-select"  style="max-width:200px">
+                                    <option value="">메세지를 선택하세요.</option>
+                                    <option value="안녕하세요! 오늘은 날씨가 좋네요. 산책하기 딱 좋은 날씨에요">안녕하세요! 오늘은 날씨가 좋네요. 산책하기 딱 좋은 날씨에요</option>
+                                    <option value="요즘 새로운 취미를 찾고 있는데, 어떤 걸 시작해볼까 고민 중이에요. 추천 있으세요">요즘 새로운 취미를 찾고 있는데, 어떤 걸 시작해볼까 고민 중이에요. 추천 있으세요</option>
+                                    <option value="요즘 넷플릭스에서 어떤 드라마나 영화를 보시나요? 추천 좀 해주세요">요즘 넷플릭스에서 어떤 드라마나 영화를 보시나요? 추천 좀 해주세요</option>
+                                    <option value="오랜만에 가족과 함께 저녁을 먹었는데, 정말 행복한 시간이었어요. 가족과 함께 있는 순간이 최고죠">오랜만에 가족과 함께 저녁을 먹었는데, 정말 행복한 시간이었어요. 가족과 함께 있는 순간이 최고죠</option>
+                                </select>
+                            </fieldset>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="step3" class="step">
+            You chose the message:
+            <div id="message"></div>
+        </div>
     </div>
-</div>
-<div id="step3" class="step">
-    You chose the message:
-    <div id="message"></div>
-</div>
-<div id="step4" class="step">
-    Hey, here's a fourth step, just for you. Toggle this on or off from step
-    1.
-</div>
+    <script src="assets/js/ui-pub.js"></script>
 </body>
 </html>

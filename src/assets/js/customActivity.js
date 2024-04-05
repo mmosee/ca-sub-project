@@ -53,13 +53,6 @@ define(["postmonger"], function (Postmonger) {
         });
 
         // Toggle step 4 active/inactive
-        // If inactive, wizard hides it and skips over it during navigation
-        $("#toggleLastStep").click(function () {
-            lastStepEnabled = !lastStepEnabled; // toggle status
-            steps[3].active = !steps[3].active; // toggle active
-
-            connection.trigger("updateSteps", steps);
-        });
     }
 
     function initialize(data) {
@@ -203,6 +196,8 @@ define(["postmonger"], function (Postmonger) {
         payload["arguments"].execute.inArguments = [{ message: value }];
 
         payload["metaData"].isConfigured = true;
+
+        console.log(payload)
 
         connection.trigger("updateActivity", payload);
     }
