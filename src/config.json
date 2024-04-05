@@ -1,14 +1,14 @@
 {
   "workflowApiVersion": "1.1",
   "metaData": {
-    "icon": "../images/icon.png",
+    "icon": "images/icon.png",
     "category": "customer"
   },
   "type": "REST",
   "lang": {
     "en-US": {
       "name": "CA-TEST",
-      "description": "An example REST activity using workflow API v1.1 format."
+      "description": "ca test"
     }
   },
   "arguments": {
@@ -18,7 +18,7 @@
           "emailAddress": "{{InteractionDefaults.Email}}"
         },
         {
-          "phoneNumber": "{{Contact.Default.PhoneNumber}}"
+          "phoneNumber": "{{Contact.Default.Phone}}"
         }
       ],
       "outArguments": [
@@ -44,9 +44,9 @@
     }
   },
   "wizardSteps": [
-    { "label": "Step 1", "key": "step1" },
-    { "label": "Step 2", "key": "step2" },
-    { "label": "Step 3", "key": "step3" },
+    { "label": "메세지 타입설정", "key": "step1" },
+    { "label": "메세지 설정", "key": "step2" },
+    { "label": "기타", "key": "step3" },
     { "label": "Step 4", "key": "step4", "active": false }
   ],
   "userInterfaces": {
@@ -61,16 +61,37 @@
       "execute": {
         "inArguments": [
           {
-            "phoneNumber": {
-              "dataType": "Phone",
+            "SubscriberKey": {
+              "dataType": "text",
               "isNullable": false,
               "direction": "in"
             }
           },
           {
-            "emailAddress": {
+            "FirstName": {
+              "dataType": "text",
+              "isNullable": true,
+              "direction": "in"
+            }
+          },
+          {
+            "LastName": {
+              "dataType": "text",
+              "isNullable": true,
+              "direction": "in"
+            }
+          },
+          {
+            "Phone": {
+              "dataType": "text",
+              "isNullable": true,
+              "direction": "in"
+            }
+          },
+          {
+            "EmailAddress": {
               "dataType": "Email",
-              "isNullable": false,
+              "isNullable": true,
               "direction": "in"
             }
           }
