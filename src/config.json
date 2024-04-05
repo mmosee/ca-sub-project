@@ -1,7 +1,7 @@
 {
   "workflowApiVersion": "1.1",
   "metaData": {
-    "icon": "images/icon.png",
+    "icon": "assets/images/icon.png",
     "category": "customer"
   },
   "type": "REST",
@@ -15,10 +15,19 @@
     "execute": {
       "inArguments": [
         {
-          "emailAddress": "{{InteractionDefaults.Email}}"
+          "EmailAddress": "{{InteractionDefaults.Email}}"
         },
         {
-          "phoneNumber": "{{Contact.Default.Phone}}"
+          "Phone": "{{Contact.Default.Phone}}"
+        },
+        {
+          "FirstName": "{{Contact.Default.FirstName}}"
+        },
+        {
+          "LastName": "{{Contact.Default.LastName}}"
+        },
+        {
+          "SubscriberKey": "{{Contact.Default.SubscriberKey}}"
         }
       ],
       "outArguments": [
