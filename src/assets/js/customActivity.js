@@ -39,6 +39,17 @@ define(["postmonger"], function (Postmonger) {
             });
 
             $("#message").html(message);
+            $("#getMessageType").html(message);
+        });
+
+        $("#select2").change(function () {
+            var message = getMessage();
+            connection.trigger("updateButton", {
+                button: "next",
+                enabled: Boolean(message),
+            });
+
+            $("#message2").html(message);
         });
 
         // Toggle step 4 active/inactive
