@@ -32,7 +32,7 @@ define(["postmonger"], function (Postmonger) {
 
         // Disable the next button if a value isn't selected
         $("#select1").change(function () {
-            var message = getMessage();
+            var message = getMessage("#select1");
             connection.trigger("updateButton", {
                 button: "next",
                 enabled: Boolean(message),
@@ -43,7 +43,7 @@ define(["postmonger"], function (Postmonger) {
         });
 
         $("#select2").change(function () {
-            var message = getMessage();
+            var message = getMessage("#select2");
             connection.trigger("updateButton", {
                 button: "next",
                 enabled: Boolean(message),
@@ -207,7 +207,7 @@ define(["postmonger"], function (Postmonger) {
         connection.trigger("updateActivity", payload);
     }
 
-    function getMessage() {
-        return $("#select1").find("option:selected").attr("value").trim();
+    function getMessage(id) {
+        return $(id).find("option:selected").attr("value").trim();
     }
 });
