@@ -1,13 +1,13 @@
 {
   "workflowApiVersion": "1.1",
   "metaData": {
-    "icon": "images/icon.png",
+    "icon": "./images/icon.png",
     "category": "customer"
   },
   "type": "REST",
   "lang": {
     "en-US": {
-      "name": "Test REST Activity (Workflow API v1.1)",
+      "name": "CA-TEST",
       "description": "An example REST activity using workflow API v1.1 format."
     }
   },
