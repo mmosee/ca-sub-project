@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "",
-    "start": "node src/sever.js"
+    "start": "node src/server.js"
   },
   "keywords": [],
   "author": "",
