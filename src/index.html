@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jounery Builder Custom Activity Kakao v0.1</title>
+    <script src="assets/js/vendor/jquery.min.js"></script>
+    <script src="assets/js/vendor/require.min.js"></script>
+    <script src="assets/js/vendor/postmonger.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            var config = {
+                baseUrl: "assets/js/",
+            };
+
+            var dependencies = ["customActivity"];
+
+            require(config, dependencies);
+        })();
+    </script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+<body>
+    <div class="header">
+        <div class="inner">헤더</div>
+    </div>
+    <div class="content">
+        <div class="control-wrap">
+            <button type="button" class="btn bg-primary btn-round">PUBLISH</button>
+            <button type="button" class="btn bg-primary btn-round">SAVE</button>
+            <button type="button" class="btn bg-success btn-round">VALIDATE</button>
+            <button type="button" class="btn bg-info btn-round">STOP</button>
+        </div>
+        <div class="msg-wrap">
+            <div class="msg-wrap-inner flex-wrap ai-st ju-sb">
+                <div class="column">
+                    <div class="title-wrap">
+                        <h2 class="title">메세지 확인</h2>
+                    </div>
+                    <!-- PHONE WRAP : START -->
+                    <div class="phone-wrap">
+                        <div class="phone">
+                            <div class="data-info">
+                                <span id="getMessageType">SMS</span>
+                            </div>
+                            <div class="outer-btns">
+                                <span class="left-btn-01"></span>
+                                <span class="left-btn-02"></span>
+                                <span class="left-btn-03"></span>
+                                <span class="right-btn"></span>
+                            </div>
+                            <div class="phone-head">
+                                <div class="status-bar">
+                                    <i class="icon icon-wifi"></i>
+                                    <i class="icon icon-bluetooth"></i>
+                                    <i class="icon icon-lte"></i>
+                                    <i class="icon icon-lte-signal"></i>
+                                    <i class="icon icon-battery"></i>
+                                    <span class="camera"></span>
+                                </div>
+                            </div>
+                            <div class="phone-body">
+                                <div class="chat-wrap">
+                                    <div class="chat" >
+                                        <div class="msg">
+                                            <p data-view-content id="message"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="phone-foot"></div>
+                        </div>
+                    </div>
+                    <!-- //PHONE WRAP : END -->
+                </div>
+                <div class="column">
+                    <div class="title-wrap">
+                        <h2 class="title">메세지 선택</h2>
+                    </div>
+                    <div class="box">
+                        <fieldset class="selet-field">
+                            <label for="select1"></label>
+                            <select id="select1" data-select="talk-select" >
+                                <option value="">선택</option>
+                                <option value="안녕하세요! 오늘은 날씨가 좋네요. 산책하기 딱 좋은 날씨에요">안녕하세요! 오늘은 날씨가 좋네요. 산책하기 딱 좋은 날씨에요</option>
+                                <option value="요즘 새로운 취미를 찾고 있는데, 어떤 걸 시작해볼까 고민 중이에요. 추천 있으세요">요즘 새로운 취미를 찾고 있는데, 어떤 걸 시작해볼까 고민 중이에요. 추천 있으세요</option>
+                                <option value="요즘 넷플릭스에서 어떤 드라마나 영화를 보시나요? 추천 좀 해주세요">요즘 넷플릭스에서 어떤 드라마나 영화를 보시나요? 추천 좀 해주세요</option>
+                                <option value="오랜만에 가족과 함께 저녁을 먹었는데, 정말 행복한 시간이었어요. 가족과 함께 있는 순간이 최고죠">오랜만에 가족과 함께 저녁을 먹었는데, 정말 행복한 시간이었어요. 가족과 함께 있는 순간이 최고죠</option>
+                            </select>
+                            <button type="button">안적용</button>
+                        </fieldset>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="inner">푸터</div>
+    </div>
+</body>
+</html>

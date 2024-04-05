@@ -1,0 +1,6 @@
+node_module/
+
+src/*.txt
+
+
+package-lock.json
