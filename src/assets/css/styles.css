@@ -54,11 +54,11 @@ button {cursor:pointer;}
 
 /* icons */
 .icon {display:inline-block;width:10px;height:10px;background-position:center center;background-size:contain;background-repeat:no-repeat;}
-.icon-battery{background-image:url("../../public/battery-status.png");}
-.icon-wifi{background-image:url("../../public/wifi.png") ;}
-.icon-bluetooth{background-image:url("../../public/bluetooth.png");}
-.icon-lte{background-image:url("../../public/lte.png");}
-.icon-lte-signal {background-image:url("../../public/lte-signal.png");}
+.icon-battery{background-image:url("../images/battery-status.png");}
+.icon-wifi{background-image:url("../images/wifi.png") ;}
+.icon-bluetooth{background-image:url("../images/bluetooth.png");}
+.icon-lte{background-image:url("../images/lte.png");}
+.icon-lte-signal {background-image:url("../images/lte-signal.png");}
 
 /* flex */
 .flex-wrap {display:flex;}
